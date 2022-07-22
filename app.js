@@ -266,20 +266,6 @@ for (let i = 0; i < mockData.length; i++) {
         pointsNr.innerHTML = nrOfPoints;
     })
 
-
-
     cardsContainer.appendChild(driverCard);
 
-
-
 }
-
-// let btn = document.querySelector('.up-score')
-// let pointsNr = document.querySelector('.points-nr');
-
-// let nrOfPoints = parseInt(pointsNr.innerHTML)
-
-// btn.addEventListener('click', () => {
-//     nrOfPoints += 1;
-//     pointsNr.innerHTML = nrOfPoints;
-// })

@@ -157,7 +157,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 576px;
+    max-width: 556px;
     padding: 1em;
 }
 
@@ -215,18 +215,27 @@ html {
 .cards-container {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .driver-card {
     background-color: white;
-    border: 3px solid black;
+    border: 2px solid black;
     border-left: none;
     border-bottom: none;
     padding: 1em 1em 0 0;
     border-radius: 0 10px;
-    max-width: 576px;
+    /* necesar pentru ridicarea border-ului */
+    margin-bottom: 1em;
+    margin-top: 2em;
+    /* -----  */
+    width: 100%;
+    transition: all 0.05s ease-in;
+}
+
+.driver-card:hover {
+    margin-top: 1.5em;
+    padding-top: 1.5em;
 }
 
 .driver-card header {
@@ -241,8 +250,29 @@ html {
 }
 
 .points {
-    text-align: end;
+    display: flex;
+    flex-direction: row;
     font-family: Formula1 Display-Wide;
+}
+
+.up-score {
+    background-color: gray;
+    border: 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1em;
+}
+
+.up-score:hover {
+    background-color: red;
+    cursor: pointer;
+}
+
+.points-view {
+    min-width: 80px;
+    text-align: end;
 }
 
 .points-nr {
@@ -277,16 +307,8 @@ html {
     margin-right: 0.5em;
 }
 
-.rbr {
-    background-color: #3671C6;
-}
-
 .rbr-hov:hover {
     border-color: #3671C6;
-}
-
-.fer {
-    background-color: #F91437;
 }
 
 .fer-hov:hover {
@@ -353,13 +375,16 @@ html {
     width: 100%;
 }
 
-@media (min-width: 767px) {
-    .backdrop {
-        max-width: 789px;
-    }
+
+/* cate 2 */
+
+@media (min-width: 768px) {
     #page-title {
         font-size: 62px;
         margin-bottom: 40px;
+    }
+    .backdrop {
+        min-width: 748px;
     }
     .info-container p {
         width: 75%;
@@ -367,16 +392,19 @@ html {
     .cards-container {
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-between;
+        gap: 3%;
     }
     .driver-card {
-        min-width: 364px;
+        width: 48.5%;
     }
 }
 
+
+/* cate 3 */
+
 @media (min-width: 1024px) {
     .backdrop {
-        max-width: 996px;
+        min-width: 966px;
     }
     .info-container p {
         width: 66%;
@@ -384,19 +412,33 @@ html {
     .driver-card {
         min-width: 300px;
     }
+    .cards-container {
+        gap: 1.75%;
+    }
+    .driver-card {
+        width: 20%;
+    }
     .driver-img {
+        margin-left: auto;
+    }
+    .driver-card:nth-child(-n+3) .driver-img {
         margin-left: calc(50% - 96px);
     }
 }
 
-@media (min-width: 1356px) {
+@media (min-width: 1360px) {
     .backdrop {
-        max-width: 1300px;
+        min-width: 1300px;
     }
     .info-container p {
         width: 45%;
     }
     .driver-card {
-        min-width: 400px;
+        width: 23%;
     }
+    .driver-card:nth-child(-n+3) {
+        width: 32%;
+    }
+    .driver-card:nth-of-type(3) {}
+    .driver-card:nth-child(4n+3) {}
 }

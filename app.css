@@ -439,6 +439,4 @@ html {
     .driver-card:nth-child(-n+3) {
         width: 32%;
     }
-    .driver-card:nth-of-type(3) {}
-    .driver-card:nth-child(4n+3) {}
 }
